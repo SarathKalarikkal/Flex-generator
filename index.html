@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/logo.png" type="png">
+    <title>Flexbox generator</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="./images/logo.png" alt="logo" />
+        <h2>Flex Generator</h2>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        
+        <div id="toggle-switch">
+            <span id="WizardBtn" class="active">Wizard</span>
+            <span id="DocsBtn" class="">Docs</span>
+        </div>
+        <div class="toggle-wizardOrDocs">
+         <div class="wizard active">
+             <h1>Generator</h1>
+             <div class="boxContainer">
+                    <div class="flexbox-container">
+                        <div class="item"></div>
+                        <div class="item"></div>
+                        <div class="item"></div>
+                    </div>
+                    <div class="flexSelection">
+                        <section>
+                            <span>Display :</span>
+                            <div class="flex-setter">
+                                <input type="checkbox" name="d-Flex" id="d-Flex">
+                                <label for="d-Flex">Flex</label>
+                            </div>
+                        </section>
+                        <section>
+                            <span>Flex-Direction :</span>
+                            <div class="direction">
+                                <div>
+                                    <input type="radio" name="flexDirection" id="row">
+                                    <label for="row">Row</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="flexDirection" id="column">
+                                    <label for="column">Column</label>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <span>Align-items :</span>
+                            <div class="direction">
+                                <div>
+                                    <input type="radio" name="align-items" id="align-start" value="start">
+                                    <label for="align-start">Start</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="align-items" id="align-center" value="center">
+                                    <label for="align-center">Center</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="align-items" id="align-end" value="end">
+                                    <label for="align-end">End</label>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <span>Justify-content :</span>
+                            <div class="direction justify-wrapper">
+                                <div class="basic">
+                                    <div>
+                                        <input type="radio" name="justify-stacontentrt" id="start">
+                                        <label for="start">Start</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="justify-content" id="center">
+                                        <label for="center">Center</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="justify-content" id="end">
+                                        <label for="end">End</label>
+                                    </div>
+                                </div>
+                               <div class="justify-space">
+                                <div>
+                                    <input type="radio" name="justify-content" id="space-between">
+                                    <label for="space-between">Space-between</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="justify-content" id="space-arround">
+                                    <label for="space-arround">Space-arround</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="justify-content" id="space-evenly">
+                                    <label for="space-evenly">space-evenly</label>
+                                </div>
+                               </div>
+                            </div>
+                        </section>
+                        <div>
+                            <button id="reset-Btn">Reset<span class="material-symbols-outlined">restart_alt</span></button>
+                        </div>
+                    </div>
+             </div>
+             <div class="code-generator">
+                <button class="button">
+                    <p>Generate Code</p>
+                  </button>
+                  
+                  <div class="code-box">
+                    <button class="copy-button" onclick="copyCode()">Copy</button>
+                    <div class="code-area">
+                        <code class="code-section" id="codeSection" contenteditable="false" spellcheck="false" placeholder="Generated Flexbox Code..."></code>
+                    </div>
+                  </div>
+
+            </div>
+         </div>
+        <div class="docs">
+          <h1>Understanding Flexbox in CSS</h1>
+
+          <h2>What is Flexbox?</h2>
+          <p>
+            Flexbox, or the Flexible Box Layout, is a layout model in CSS
+            designed for building responsive and complex layouts with ease.
+          </p>
+
+          <h2>Why use Flexbox?</h2>
+          <p>
+            Flexbox simplifies the process of creating flexible and dynamic
+            layouts, making it easier to distribute space and align items within
+            a container, regardless of their size or order.
+          </p>
+
+          <h2>Basic Concepts</h2>
+          <p>
+            <strong>Flex Container:</strong> An element with
+            <code>display: flex;</code> or
+            <code>display: inline-flex;</code> becomes a flex container. It
+            allows you to control the layout of its children.
+          </p>
+          <p>
+            <strong>Flex Items:</strong> The children of a flex container are
+            referred to as flex items. They can be aligned and distributed
+            within the container using various properties.
+          </p>
+
+          <h2>Key Properties</h2>
+          <ul>
+            <li>
+              <code>display: flex;</code> - Turns an element into a flex
+              container.
+            </li>
+            <li>
+              <code>flex-direction:</code> - Defines the direction of the main
+              axis (row, column, row-reverse, column-reverse).
+            </li>
+            <li>
+              <code>justify-content:</code> - Aligns items along the main axis
+              (flex-start, flex-end, center, space-between, space-around).
+            </li>
+            <li>
+              <code>align-items:</code> - Aligns items along the cross axis
+              (flex-start, flex-end, center, baseline, stretch).
+            </li>
+            <li>
+              <code>flex:</code> - Specifies the flexibility of a flex item.
+            </li>
+          </ul>
+
+          <h2>Getting Started Example</h2>
+          <pre>
+            <div class="codeBox">
+                <code>
+                    &lt;div<span>
+                    style="display: flex; 
+                    justify-content: space-between;
+                    align-items: center;</span>"&gt;
+                      &lt;div&gt;Item 1&lt;/div&gt;
+                      &lt;div&gt;Item 2&lt;/div&gt;
+                      &lt;div&gt;Item 3&lt;/div&gt;
+                    &lt;/div&gt;
+                  </code>
+            </div>
+    
+  </pre>
+
+          <p>
+            This simple example creates a flex container with three items,
+            evenly spaced with space between them.
+          </p>
+
+          <h2>Resources</h2>
+          <p>
+            For more detailed information and examples, refer to the official
+            <a class="mdnLink"
+              href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox"
+              target="_blank"
+              >MDN Web Docs on Flexbox</a
+            >.
+          </p>
+        </div>
+        </div>
+         
+      </div>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="./images/logo.png" alt="">
+                <h2>Flex Generator</h2>
+            </div>
+        <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex">MDN docs</a></li>
+            <li><a href="https://www.w3schools.com/css/css3_flexbox.asp">W3Schools</a></li>
+        </ul>
+        <p>Developed by SK</p>
+    </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
